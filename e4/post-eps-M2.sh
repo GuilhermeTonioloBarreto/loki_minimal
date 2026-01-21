@@ -4,13 +4,13 @@ jq -n '{
   streams: [
     {
       stream: {
-        job: "pps",
-        service: "pps_quati",
+        job: "quati",
+        service: "eps",
         level: "info",
         env: "dev"
       },
       values: [
-        [ ((now * 1000000000) | floor | tostring), "O Gabs  é sensacional" ]
+        [ ((now * 1000000000) | floor | tostring), "M2 está com problema" ]
       ]
     }
   ]

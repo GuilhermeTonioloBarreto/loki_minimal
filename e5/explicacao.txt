@@ -1,0 +1,14 @@
+o objetivo deste exemplo é filtrar as querys a partir do próprio texto do log
+
+- rode o arquivo ready.sh para saber se o servidor está pronto para ser utilizado
+- rode o arquivo query.sh. não é para aparecer nenhum log, visto que nada foi adicionado ainda
+- rode o arquivo post-eps-M1.sh. um log com label job = quati e com o texto de log relatando problemas no espelho M1 será adicionado
+- rode o arquivo post-eps-M2.sh. um log com label job = quati e com o texto de log relatando problemas no espelho M2 será adicionad
+- rode o arquivo post-eps-M3.sh. um log com label job = quati e com o texto de log relatando problemas no espelho M3 será adicionad
+- rode o arquivo query.sh. é para aparecer os três logs de espelho
+
+- agora, rode o arquivo query-no-M1.sh. veja que apenas o log de M1 que não apareceu. isso porque, na query, está sendo utilizado o símbolo !~ que significa que deve-se ignorar os logs que tem a palavra "M1" no texto do log
+- agora, rode o arquivo query-no-M2.sh. veja que apenas o log de M2 que não apareceu. isso porque, na query, está sendo utilizado o símbolo !~ que significa que deve-se ignorar os logs que tem a palavra "M2" no texto do log
+- agora, rode o arquivo query-no-M3.sh. veja que apenas o log de M3 que não apareceu. isso porque, na query, está sendo utilizado o símbolo !~ que significa que deve-se ignorar os logs que tem a palavra "M3" no texto do log
+
+- teste outros textos de filtros para praticar o conceito

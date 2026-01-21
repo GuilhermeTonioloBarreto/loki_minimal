@@ -1,0 +1,45 @@
+o objetivo deste exemplo é ensinar a postar algum log no banco de dados
+
+Introdução
+Todo log gravado no banco de dados deve estar associado a um Stream e um Entry.
+Para entender o conceito de Stream, é necessario antes entender o que é um Label
+
+Label
+Um label é um "atributo" criado para diferenciar logs distintos.
+um exemplo de label comum usado é o label "job". ele pode ser usado para definir de qual linha de luz está sendo enviado o log, por exemplo:
+- job = quati
+
+outro exemplo de label é o "service", que pode ser usado para definir qual subsistema está sendo utilizado "eps, pps, hvac"
+- service = quati
+
+Stream
+Stream é um conjunto único de labels
+Por exemplo, o stream abaixo define um valor job e um valor de service
+- job = quati
+- service = eps
+
+outro exemplo de stream:
+- job = quati
+- service = pps
+
+ou seja, streams são conjuntos únicos de labels
+
+
+Entry
+O Entry é o texto do log em si que contém a informação do problema a ser relatado
+Cada entry é composto por um timestamp e um log line
+
+Timestamp
+Timestamp é a data e a hora que o log ocorreu. 
+
+Log line
+Log line é o texto do log em si, que explica a situação a ser registrada no log
+
+Passo a passo
+- rode o arquivo ready.sh para ver se o servidor já está rodando
+- rode o arquivo query.sh. Ele vai consultar todos os registros dos últimos 15 minutos que tem como o label job = quati. não é para aparecer nada, pq nenhum dado foi postado até agr
+- rode o arquivo post-eps.sh, ele irá postar um log de eps da quati (job = quati, service = eps"
+- rode novamente o arquivo query.sh. agora sim irá aparecer um logo de texto de eps
+- rode o arquivo post-pps.sh, ele irá postar um log de pps da quati (job = quati, service = pps)
+- rode novamente o arquivo query.sh. agora irá exibir mais outro log, um de eps e outro de pps
+- rode varias vezes os arquivos post-eps.sh e post-pps.sh e veja os logs sendo adicionados no sistema. mude tbm o nome dos valores dos labels (job = carnauba, por exemplo), e veja que o registro com este label não será exibido porque o arquivo query.sh está filtrando apenas jobs = quati)

@@ -1,0 +1,1 @@
+este exemplo tem como objetivo verificar se o banco de dados está pronto para uso

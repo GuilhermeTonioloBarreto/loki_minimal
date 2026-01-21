@@ -1,0 +1,12 @@
+este exemplo tem como objetivo filtrar as querys a partir de labels
+
+- rode o arquivo ready.sh para saber se o servidor está pronto para ser utilizado
+- rode o arquivo query.sh. não é para aparecer nenhum log, visto que nada foi adicionado ainda
+- rode o arquivo post-eps.sh. um log com labels job = quati e service = eps será adicionado
+- rode o arquivo post-pps.sh. um log com labels job = quati e service = pps será adicionado
+- rode novamente o arquivo query.sh. é para aparecer tanto a mensagem de log de eps quanto a mensagem de log de pps
+
+- agora, rode o arquivo query-eps.sh e veja que só o log de eps foi exibido. isso porque, dentro da query de consulta, foram setados para aparecer os logs com parâmetros job = quati e service = eps. como o post de pps tem como service = pps, este log foi ignorado na consulta
+- agora, rode o arquivo query-pps.sh e veja que só o log de pps foi exibido. isso porque, dentro da query de consulta, foram setados para aparecer os logs com parâmetros job = quati e service = pps. como o post de eps tem como service = eps, este log foi ignorado na consulta
+
+- faça testes adicionando logs com outros jobs e services e filtre-os na funcao query
