@@ -1,4 +1,4 @@
-o objetivo deste exemplo é filtrar as querys a partir do próprio texto do log
+o objetivo deste exemplo é filtrar as querys a partir do próprio texto do log utilizando o operador de filtro literal |= (contém)
 
 - rode o arquivo ready.sh para saber se o servidor está pronto para ser utilizado
 - rode o arquivo query.sh. não é para aparecer nenhum log, visto que nada foi adicionado ainda
