@@ -1,0 +1,14 @@
+o objetivo deste exemplo é filtrar as querys a partir do próprio texto do log utilizando o operador de filtro regex |~ (contém) e o regex |
+
+- rode o arquivo ready.sh para saber se o servidor está pronto para ser utilizado
+- rode o arquivo query.sh. não é para aparecer nenhum log, visto que nada foi adicionado ainda
+- rode o arquivo post-eps-M1.sh. um log com label job = quati e com o texto de log relatando problemas no espelho M1 será adicionado
+- rode o arquivo post-eps-M2.sh. um log com label job = quati e com o texto de log relatando problemas no espelho M2 será adicionado
+- rode o arquivo post-eps-M3.sh. um log com label job = quati e com o texto de log relatando problemas no espelho M3 será adicionado
+- rode o arquivo query.sh. é para aparecer os três logs de espelho
+
+- agora, rode o arquivo query-M1-M2.sh. veja que apenas os logs de M1 e M2 que apareceram. isso porque, na query, está sendo utilizado a regex 	"M1"|"M2", ou seja, só aparecerão os que tiverem em seus respectivos textos a palavra "M1" ou "M2"
+- agora, rode o arquivo query-M1-M3.sh. veja que apenas os logs de M1 e M3 que apareceram. isso porque, na query, está sendo utilizado a regex 	"M1"|"M3", ou seja, só aparecerão os que tiverem em seus respectivos textos a palavra "M1" ou "M3"
+- agora, rode o arquivo query-M2-M3.sh. veja que apenas os logs de M2 e M3 que apareceram. isso porque, na query, está sendo utilizado a regex 	"M2"|"M3", ou seja, só aparecerão os que tiverem em seus respectivos textos a palavra "M2" ou "M3"
+
+- teste outros textos de filtros para praticar o conceito
